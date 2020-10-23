@@ -1,0 +1,9 @@
+{
+  "name": "rajatdua-website",
+  "version": "1.0.0",
+  "description": "Contains codebase for Rajat Dua's portfolio",
+  "main": "index.js",
+  "repository": "https://github.com/rajatdua/rajatdua-website.git",
+  "author": "Rajat Dua",
+  "license": "MIT"
+}
