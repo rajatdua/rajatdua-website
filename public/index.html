@@ -35,7 +35,7 @@
 		.mainCard {
 			display: flex;
 			flex-direction: row;
-			padding: 1% 6%;
+			padding: 1% 5%;
 			box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.20),  -30px -30px 60px rgba(0, 0, 0, 0.30);
 			border-radius: 10px;
 		}
@@ -63,9 +63,21 @@
 		.aboutMe{
 			margin-top: 10px;
 		}
+		.iconWrapper{
+			border: 1px solid #FFF;
+			border-radius: 50px;
+			width: 36px;
+			height: 36px;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.midIconWrap{
+			margin: 0 5px;
+		}
 		.icon {
-			width: 56px;
-			height: 56px;
+			width: 22px;
+			height: 22px;
 		}
 		.title{
 			padding-bottom: 5px;
@@ -105,15 +117,16 @@
 		<div class="faceContainer">
 			<img class="myFace" alt="" src="./my-face-min.png"/>
 			<div class="aboutMe">
-				<a aria-label="LinkedIn" href="https://www.linkedin.com/in/rajat-dua-675362b9/"><img class="icon" src="./linkedin.svg" alt=""/></a>
-				<a aria-label="Twitter" href="https://twitter.com/rajatdua1"><img class="icon" src="./twitter.svg" alt=""/></a>
+				<a class="iconWrapper" aria-label="LinkedIn" href="https://www.linkedin.com/in/rajat-dua-675362b9/"><img class="icon" src="./linkedin.svg" alt=""/></a>
+				<a class="iconWrapper midIconWrap" aria-label="Twitter" href="https://twitter.com/rajatdua1"><img class="icon" src="./twitter.svg" alt=""/></a>
+				<a class="iconWrapper" aria-label="Github" href="https://github.com/rajatdua"><img class="icon" src="./github.svg" alt=""/></a>
 			</div>
 		</div>
 		<div class="information">
 			<h2 class="title">Rajat Dua</h2>
 			<h3 class="subtitle">Software Engineer</h3>
 			<h4 class="subtitle-2">Paytm</h4>
-			<a aria-label="Email" class="btn" href="mailto:me@rajatdua.com">E-mail</a>
+			<a aria-label="Email" class="btn" href="mailto:me@rajatdua.com">Mail me</a>
 		</div>
 	</div>
 </div>
