@@ -9,7 +9,7 @@
   })(window,document,'script','dataLayer','GTM-5VJ3MCP');</script>
 	<!-- End Google Tag Manager -->
 	<meta charset="utf-8">
-	<meta name="description" content="Rajat Dua Contact">
+	<meta name="description" content="Rajat Dua Card">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/ico" href="./favicon.ico"/>
 	<link rel="icon" type="image/ico" href="https://rajatdua.com/favicon.png"/>
@@ -124,6 +124,11 @@
 			}
 		}
 	</style>
+	<script>
+		function handleGTM(event_action, event_label = ''){
+		  window && window.dataLayer && window.dataLayer.push(Object.assign({}, { event_category: 'rajatdua', event_action }, event_label ? { event_label } : {}));
+		}
+	</script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -135,16 +140,16 @@
 		<div class="faceContainer">
 			<img class="myFace" alt="" src="./my-face-min.png"/>
 			<div class="aboutMe">
-				<a class="iconWrapper" aria-label="LinkedIn" href="https://www.linkedin.com/in/rajat-dua-675362b9/"><img class="icon" src="./linkedin.svg" alt=""/></a>
-				<a class="iconWrapper midIconWrap" aria-label="Twitter" href="https://twitter.com/rajatdua1"><img class="icon" src="./twitter.svg" alt=""/></a>
-				<a class="iconWrapper" aria-label="Github" href="https://github.com/rajatdua"><img class="icon" src="./github.svg" alt=""/></a>
+				<a class="iconWrapper" onclick="handleGTM('mail_me_clicked', 'linkedin')" aria-label="LinkedIn" href="https://www.linkedin.com/in/rajat-dua-675362b9/"><img class="icon" src="./linkedin.svg" alt=""/></a>
+				<a class="iconWrapper midIconWrap" onclick="handleGTM('mail_me_clicked', 'twitter')" aria-label="Twitter" href="https://twitter.com/rajatdua1"><img class="icon" src="./twitter.svg" alt=""/></a>
+				<a class="iconWrapper" onclick="handleGTM('mail_me_clicked', 'github')" aria-label="Github" href="https://github.com/rajatdua"><img class="icon" src="./github.svg" alt=""/></a>
 			</div>
 		</div>
 		<div class="information">
 			<h2 class="title">Rajat Dua</h2>
 			<h3 class="subtitle">Software Engineer</h3>
 			<h4 class="subtitle-2">Paytm</h4>
-			<a aria-label="Email" class="btn" href="mailto:me@rajatdua.com">Mail me</a>
+			<a aria-label="Email" class="btn" href="mailto:me@rajatdua.com" onclick="handleGTM('mail_me_clicked')">Mail me</a>
 		</div>
 	</div>
 </div>
