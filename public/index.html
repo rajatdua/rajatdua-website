@@ -107,6 +107,13 @@
 			padding: 10px;
 			display: flex;
 		}
+		.btn-wrapper {
+			display: flex;
+			flex-direction: row;
+		}
+		:nth-child(1) {
+			margin-right: 5px;
+		}
 		@media only screen and (max-width: 600px) {
 			.mainCard {
 				flex-direction: column;
@@ -133,7 +140,10 @@
 			<h2 class="title">Rajat Dua</h2>
 			<h3 class="subtitle">Masters in Computer Science</h3>
 			<h4 class="subtitle-2">Aarhus University, Denmark</h4>
-			<a aria-label="Email" class="btn" href="mailto:me@rajatdua.com">Mail me</a>
+			<div class="btn-wrapper">
+				<a aria-label="Email" class="btn" href="mailto:me@rajatdua.com"><img class="icon" src="./email-svgrepo-com.svg"/></a>
+				<a aria-label="Resume" class="btn" download href="./resume.pdf"><img class="icon" src="./download-1-svgrepo-com.svg"/> Resume</a>
+			</div>
 		</div>
 	</div>
 </div>
