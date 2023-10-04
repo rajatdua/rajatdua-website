@@ -8,7 +8,62 @@
 	<link rel="icon" type="image/ico" href="https://rajatdua.com/favicon.png"/>
 	<title>Rajat Dua</title>
 	<style media="screen">
+		.confetti {
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			background-color: #e44d26; /* Confetti color */
+			transform: rotate(45deg);
+			animation: fall 3s ease-in-out infinite;
+			top: 0;
+			right: 0;
+			left: 0;
+		  }
+
+		   /* Customize confetti colors */
+		   .confetti:nth-child(1) { background-color: #e44d26; }
+		   .confetti:nth-child(2) { background-color: #41b883; }
+		   .confetti:nth-child(3) { background-color: #2965f1; }
+		   /* Add more colors as needed */
+	   
+		   /* Increase the number of particles */
+		   .confetti:nth-child(4),
+		   .confetti:nth-child(5),
+		   .confetti:nth-child(6),
+		   .confetti:nth-child(7),
+		   .confetti:nth-child(8),
+		   .confetti:nth-child(9),
+		   .confetti:nth-child(10) {
+			 width: 8px;
+			 height: 8px;
+		   }
+	  
+		  @keyframes fall {
+			0%, 100% {
+			  transform: translateY(0) rotate(45deg);
+			}
+			50% {
+			  transform: translateY(500px) rotate(45deg);
+			}
+		  }
+		  
+		@keyframes shake {
+			0%, 100% {
+			  transform: translateX(0);
+			}
+			25%, 75% {
+			  transform: translateX(-5px);
+			}
+			50% {
+			  transform: translateX(5px);
+			}
+		  }
+	  
+		  .shake {
+			animation: shake 0.5s ease-in-out;
+		  }
 		body {
+			position: relative;
 			background: #262626;
 			color: #FFF;
 			font-family: Roboto, Helvetica, Arial, sans-serif;
@@ -40,6 +95,7 @@
 			background: linear-gradient(145deg, #292929, #222222);
 			box-shadow:  26px 26px 52px #1a1a1a,
 			-26px -26px 52px #323232;
+			position: relative;
 		}
 		.faceContainer{
 			display: flex;
@@ -62,6 +118,14 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: flex-start;
+		}
+		.easter {
+			position: absolute;
+			bottom: 8px;
+			right: 12px;
+		}
+		.easter-style {
+			transition: fill 0.3s;
 		}
 		.aboutMe{
 			margin-top: 10px;
@@ -147,7 +211,66 @@
 				<a aria-label="Resume" class="btn" download href="./resume.pdf"><img class="icon" src="./download-1-svgrepo-com.svg"/>&nbsp;Resume</a>
 			</div>
 		</div>
+		<div class="easter">
+			<img class="icon easter-style" id="easter-icon" src="./pumpkin.svg" alt="pumpkin" />
+		</div>
 	</div>
 </div>
+<script>
+	function execEaster() {
+		var count = 0;
+		var svg = document.getElementById('easter-icon');
+		var isShaking = false;
+
+		function startShake() {
+		  if (!isShaking) {
+			isShaking = true;
+			svg.classList.add('shake');
+		  }
+		}
+	  
+		function stopShake() {
+		  isShaking = false;
+		  svg.classList.remove('shake');
+		}
+
+		function execMeaningOfLife() {
+			count = 0;
+			function createConfetti() {
+				const confetti = document.createElement('div');
+				confetti.className = 'confetti';
+				confetti.style.left = Math.random() * window.innerWidth + 'px';
+				document.body.appendChild(confetti);
+			
+				// Remove confetti after animation ends
+				confetti.addEventListener('animationiteration', () => {
+				  document.body.removeChild(confetti);
+				});
+			  }
+
+			  var intervalId = setInterval(createConfetti, 500);
+			  var timeoutId = setTimeout(() => {
+				clearInterval(intervalId);
+				clearTimeout(timeoutId);
+			  }, 8000);
+		}
+
+		function handleClick() {
+			count++;
+			if (count === 42) execMeaningOfLife();
+		}
+		
+		svg.addEventListener('touchstart', startShake);
+	  
+		svg.addEventListener('touchend', stopShake);
+	  
+		svg.addEventListener('mouseover', startShake);
+	  
+		svg.addEventListener('mouseout', stopShake);
+
+		svg.addEventListener('click', handleClick)
+	}
+	execEaster();
+</script>
 </body>
 </html>
